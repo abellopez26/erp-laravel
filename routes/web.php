@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = [
+        'category_name' => 'home',
+        'page_name' => 'start',
+        'has_scrollspy' => 0,
+        'scrollspy_offset' => '',
+    ];
+    return view('admin.welcome')->with($data);
 });
+
+
+Route::resource('customers', CustomerController::class);
