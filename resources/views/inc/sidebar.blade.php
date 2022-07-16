@@ -60,7 +60,7 @@
                                 <a href="/movements/tabs"> Compras </a>
                             </li>
                             <li class="{{ ($page_name === 'sales') ? 'active' : '' }}">
-                                <a href="/movements/accordions"> Ventas  </a>
+                                <a href="/sales"> Ventas  </a>
                             </li>
                         </ul>
                     </li>
@@ -84,9 +84,6 @@
                             </li>
                         </ul>
                     </li>
-
-
-
 
                     <li class="menu">
                         <a href="https://designreset.com/cork/documentation/" aria-expanded="false" class="dropdown-toggle">

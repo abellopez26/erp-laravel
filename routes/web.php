@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProviderController;
+use App\Http\Controllers\SaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,5 @@ Route::get('/', function () {
 Route::resource('customers', CustomerController::class);
 
 Route::resource('providers', ProviderController::class);
+
+Route::resource('sales', SaleController::class);
