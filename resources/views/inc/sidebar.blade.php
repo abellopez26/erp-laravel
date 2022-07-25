@@ -40,7 +40,7 @@
                         </a>
                         <ul class="collapse submenu list-unstyled {{ ($category_name === 'inventory') ? 'show' : '' }}" id="inventory" data-parent="#accordionExample">
                             <li class="{{ ($page_name === 'products') ? 'active' : '' }}">
-                                <a href=""> Productos </a>
+                                <a href="/products"> Productos </a>
                             </li>
                         </ul>
                     </li>
@@ -81,6 +81,9 @@
                             </li>
                             <li class="{{ ($page_name === 'sellers') ? 'active' : '' }}">
                                 <a href="/personal/avatars"> Vendedores </a>
+                            </li>
+                            <li class="{{ ($page_name === 'providers') ? 'active' : '' }}">
+                                <a href="/providers"> Proveedores </a>
                             </li>
                         </ul>
                     </li>

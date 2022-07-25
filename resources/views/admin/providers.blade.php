@@ -13,7 +13,7 @@
 
                     <div class="row my-4">
                         <div class="col">
-                            <a href="{{ route('providers.create')}}" class="btn btn-primary mb-2">Agregar Cliente</a>
+                            <a href="{{ route('providers.create')}}" class="btn btn-primary mb-2">Agregar Proveedor</a>
                         </div>
                     </div>
 
@@ -47,7 +47,7 @@
                                 </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="4" style="text-align: center" >No hay Registros</td>
+                                        <td colspan="5" style="text-align: center" >No hay Registros</td>
                                     </tr>
                                 @endforelse
                             </tbody>
