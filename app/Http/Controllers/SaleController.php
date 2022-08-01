@@ -4,16 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\SaleRepository;
+use App\Repositories\CustomerRepository;
+use App\Repositories\ProductRepository;
+
 use App\Models\Sale;
+use App\Models\Customer;
+use App\Models\Product;
 
 class SaleController extends Controller
 {
 
     private $saleRepository;
 
-    public function __construct(SaleRepository $saleRepository) {
+    public function __construct(
+        SaleRepository $saleRepository,
+        CustomerRepository $customerRepository,
+        ProductRepository $productRepository
+
+    ) {
 
         $this->saleRepository = $saleRepository;
+        $this->customerRepository = $customerRepository;
+        $this->productRepository = $productRepository;
 
     }
 
@@ -27,13 +39,13 @@ class SaleController extends Controller
         $sales = $this->saleRepository->all();
 
         $data = [
-            'category_name' => 'personal',
-            'page_name' => 'Sales',
+            'category_name' => 'movements',
+            'page_name' => 'sales',
             'has_scrollspy' => 0,
             'scrollspy_offset' => '',
         ];
 
-        return view('admin.Sales')->with($data)->with('sales', $sales);
+        return view('admin.sales')->with($data)->with('sales', $sales);
     }
 
     /**
@@ -43,14 +55,17 @@ class SaleController extends Controller
      */
     public function create()
     {
+        $customers = $this->customerRepository->all();
+        $products = $this->productRepository->all();
+
         $data = [
-            'category_name' => 'personal',
-            'page_name' => 'Sales | new',
+            'category_name' => 'movements',
+            'page_name' => 'sales | new',
             'has_scrollspy' => 0,
             'scrollspy_offset' => '',
         ];
 
-        return view('admin.new_Sale')->with($data);
+        return view('admin.new_sale')->with($data)->with('customers', $customers)->with('products', $products);
     }
 
     /**

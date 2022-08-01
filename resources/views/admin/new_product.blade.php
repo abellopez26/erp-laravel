@@ -46,7 +46,7 @@
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary btn-rounded mb-1">Guardar</button>
-                            <a type="button" href="{{ route('providers.index')}}" class="btn btn-danger btn-rounded mb-1">Cancelar</a>
+                            <a type="button" href="{{ route('products.index')}}" class="btn btn-danger btn-rounded mb-1">Cancelar</a>
                         </div>
 
 

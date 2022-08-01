@@ -11,6 +11,12 @@ class Sale extends Model
 
     protected $table = "sale";
 
-    protected $fillable = ['customer_id', 'date', 'total'];
+    protected $fillable = ['customer_id', 'date', 'total', 'status'];
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
+
 
 }
