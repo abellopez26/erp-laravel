@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\CustomerRepository;
 use App\Models\Customer;
+use Session;
 
 class CustomerController extends Controller
 {
@@ -61,6 +62,8 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+        Session::flash('save', 'Cliente guardado');
+
         $customer = new Customer($request->all());
 
         $this->customerRepository->save($customer);
@@ -109,6 +112,8 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
+        Session::flash('update', 'Cliente actualizado');
+
         $customer = $this->customerRepository->update($customer, $request->all());
 
         return redirect('customers');
@@ -123,6 +128,7 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
+        Session::flash('delete', 'Cliente eliminado');
         $customer = $this->customerRepository->delete($customer);
 
         return redirect('customers');

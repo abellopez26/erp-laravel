@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group mb-4">
                             <label for="formGroupExampleInput">Telefono</label>
-                            <input type="text" class="form-control"  id="phonenumber" name="phonenumber" placeholder="Phone Number" required>
+                            <input type="text" class="form-control"  id="phonenumber" name="phonenumber" placeholder="Phone" required>
                             <div class="invalid-feedback">
                                 Debes ingresar un telefono
                             </div>
