@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\CustomerRepository;
 use App\Models\Customer;
+use App\Http\Requests\CustomerCreateFormRequest;
 use Session;
 
 class CustomerController extends Controller
@@ -60,13 +61,14 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CustomerCreateFormRequest $request)
     {
-        Session::flash('save', 'Cliente guardado');
 
         $customer = new Customer($request->all());
 
         $this->customerRepository->save($customer);
+
+        Session::flash('save', 'Cliente guardado');
 
         return redirect('customers');
 
@@ -133,4 +135,7 @@ class CustomerController extends Controller
 
         return redirect('customers');
     }
+
+
+
 }
